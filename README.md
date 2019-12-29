@@ -5,8 +5,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user|references|null: false, foreign_key: true|
-|group|references|null: false, foreign_key: true|
+|user|references|null: false|
+|group|references|null: false|
 
 ### Association
 - belongs_to :group
@@ -16,32 +16,39 @@
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|AKB|string|null: false, foreign_key: true|
-|NMB|string|null: false, foreign_key: true|
-
-
+|name|string|null: false|
+<!-- |member|string|null: false, foreign_key: true| -->
+|password|string|null: false|
 ### Association
-- belongs_to :AKB
-- belongs_to :NMB
+<!-- - belongs_to :register
+- belongs_to :member -->
+ - has_many :users, through: :groups_users
+ - has_many :groups_users
+ - has_many :messages
 
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, foreign_key: true|
-|age|string|null: false, foreign_key: true|
+|name|string|null: false|
+|password|string|null: false|
 
 
 ### Association
-- belongs_to :name
-- belongs_to :age
+<!-- - belongs_to :name
+- belongs_to :password -->
+ - has_many :groups, through: :groups_users
+ - has_many :groups_users
+ - has_many :messages
 
 
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|word|string|null: false, foreign_key: true|
-|word|string|null: false, foreign_key: true|
+|text|string|null: false |
+|image|string|null: false|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :word
-- belongs_to :word
+- belongs_to :groups
+- belongs_to :users
