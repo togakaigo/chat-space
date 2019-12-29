@@ -16,32 +16,32 @@
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|system|string|null: false, foreign_key: true|
-|mass|string|null: false, foreign_key: true|
+|AKB|string|null: false, foreign_key: true|
+|NMB|string|null: false, foreign_key: true|
 
 
 ### Association
-- belongs_to :system
-- belongs_to :mass
+- belongs_to :AKB
+- belongs_to :NMB
 
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|client|string|null: false, foreign_key: true|
-|human|string|null: false, foreign_key: true|
+|name|string|null: false, foreign_key: true|
+|age|string|null: false, foreign_key: true|
 
 
 ### Association
-- belongs_to :client
-- belongs_to :human
+- belongs_to :name
+- belongs_to :age
 
 
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |word|string|null: false, foreign_key: true|
-|letter|string|null: false, foreign_key: true|
+|word|string|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :word
-- belongs_to :letter
+- belongs_to :word
