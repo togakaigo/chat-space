@@ -5,8 +5,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|group|references|null: false|
-|user|references|null: false|
+|group|references|null: truth|
+|user|references|null: truth|
 
 ### Association
 - belongs_to :group
@@ -16,7 +16,7 @@
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: truth|
 <!-- |member|string|null: false, foreign_key: true| -->
 
 
@@ -25,13 +25,13 @@
 - belongs_to :member -->
  - has_many :users, through: :groups_users
  - has_many :groups_users
- - belongs_to :messages
+ - has_many :messages
 
 
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: truth|
 
 
 ### Association
@@ -39,17 +39,17 @@
 - belongs_to :password -->
  - has_many :groups, through: :groups_users
  - has_many :groups_users
- - belongs_to :messages
+ - has_many :messages
 
 
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|string|null: false |
-|image|string|null: false|
+|text|string|null: truth|
+|image|string|null: truth|
 |user_id|references|null: false|
 |group_id|references|null: false|
 
 ### Association
-- belongs_to :groups
-- belongs_to :users
+- belongs_to :group
+- belongs_to :user
