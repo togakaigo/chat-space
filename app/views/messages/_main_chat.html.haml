@@ -1,0 +1,16 @@
+.main-chat
+  .main-header
+    .main-header__left-box
+      .main-header__left-box__current-group
+      .main-header__left-box__member-list
+        .main-header__left-box__member-list__member toga
+    = link_to  do
+      .main-header__left-box__edit-btn  Edit
+  .massages
+  .form
+    %form.new__message
+      %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+      %label{class: "input-box__image"}
+        = icon('fas', 'image')
+        %input{type: "file", class: "input-box__image__file"}
+      %input{type: "submit", class: "submit-btn"}
