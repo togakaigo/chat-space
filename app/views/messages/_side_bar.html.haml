@@ -1,0 +1,18 @@
+.chat-side
+  .side-header
+    .side-header__box
+      .side-header__box__user-name toga
+      .side-header__box__menu
+        .side-header__box__menu__new-group
+          = link_to  do
+            = icon('fas','edit')
+        .side-header__box__menu__edit-user
+          = link_to  do
+            = icon('fas','cog')
+  
+  .class-groups
+    = link_to do
+      .class-group
+        .class-group__group-name test
+        .class-group__latest-message まだメッセージありません
+    
