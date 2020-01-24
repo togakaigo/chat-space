@@ -5,15 +5,17 @@
         = current_user.name
       .side-header__box__menu
         .side-header__box__menu__new-group
-          = link_to  do
+          = link_to new_group_path do
             = icon('fas','edit')
         .side-header__box__menu__edit-user
           = link_to edit_user_path(current_user) do
             = icon('fas', 'cog', class: 'icon')
   
   .class-groups
-    = link_to do
-      .class-group
-        .class-group__group-name test
-        .class-group__latest-message まだメッセージありません
+    -current_user.groups.each do |group|
+      = link_to '#' do
+        .class-group
+          .class-group__group-name 
+            = group.name
+          .class-group__latest-message まだメッセージありません
     
