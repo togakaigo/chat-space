@@ -15,7 +15,7 @@
         color: #333;
         margin-bottom: 15px;
       }
-      &__membar-list{
+      &__member-list{
         display: flex;
         font-size: 12px;
         color: #999999;
@@ -35,18 +35,19 @@
       } 
     } 
   .massages{
-      height: calc(100vh - 190px);
-      padding: 46px 40px;
-      background-color: #fafafa;
-      overflow: scroll;
+    height: calc(100vh - 190px);
+    padding: 46px 40px;
+    background-color: #fafafa;
+    overflow: scroll;
      }
   .form{
     height: 90px;
     padding: 20px 40px;
     background-color: #ddd;
 
-    .new__message{
+    .new-messages{
       display: flex;
+      
       .input-box{
         display: flex;
         width: 100%;
@@ -63,8 +64,8 @@
           position: absolute;
           cursor: pointer;
           font-size: 1.3rem;
-          right: 170px;
-          bottom: 35px;
+          right: 10px;
+          bottom: 15px;
           &__file{
             display: none;
           }

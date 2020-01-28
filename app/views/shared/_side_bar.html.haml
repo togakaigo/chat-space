@@ -6,16 +6,37 @@
       .side-header__box__menu
         .side-header__box__menu__new-group
           = link_to new_group_path do
-            = icon('fas','edit')
+            = icon('fas','edit', class: 'icon')
         .side-header__box__menu__edit-user
           = link_to edit_user_path(current_user) do
             = icon('fas', 'cog', class: 'icon')
   
   .class-groups
     -current_user.groups.each do |group|
-      = link_to '#' do
+      = link_to group_messages_path(group) do
         .class-group
-          .class-group__group-name 
+          .class__group-name 
             = group.name
-          .class-group__latest-message まだメッセージありません
+          .class-group__latest-message 
+            = group.show_last_message
     
+
+-# .side-bar
+-#   .header
+-#     %h3.header__name
+-#       = current_user.name
+-#     %ul.header__lists
+-#       %li.list
+-#         = link_to new_group_path do
+-#           = icon('fas', 'edit', class: 'icon')
+-#       %li.list
+-#         = link_to edit_user_path(current_user) do
+-#           = icon('fas', 'cog', class: 'icon')
+-#   .groups
+-#     - current_user.groups.each do |group|
+-#       .group
+-#         = link_to group_messages_path(group) do
+-#           .group__name
+-#             = group.name
+-#           .group__message
+-#             メッセージはまだありません
