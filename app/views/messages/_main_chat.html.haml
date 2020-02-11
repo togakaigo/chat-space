@@ -2,7 +2,7 @@
   .main-header
     .main-header__left-box
       .main-header__left-box__current-group{"data-group_id": @group.id}
-        guru-pumei
+        = @group.name
       .main-header__left-box__member-list
         .main-header__left-box__member-list__member Menber:toga
     = link_to edit_group_path (current_user) do
